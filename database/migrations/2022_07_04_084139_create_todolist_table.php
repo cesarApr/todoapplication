@@ -14,7 +14,7 @@ class CreateTodolistTable extends Migration
      */
     public function up()
     {
-        Schema::create('todolist', function (Blueprint $table) {
+        Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
@@ -32,6 +32,6 @@ class CreateTodolistTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todolist');
+        Schema::dropIfExists('todos');
     }
 }
